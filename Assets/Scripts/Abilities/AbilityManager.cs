@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] _spawnableObjects;
-    [SerializeField] GameObject[] _abilityUI;
+    //UI = Buttons for player to press, calls the SpawnVisual() func
+    [SerializeField] private GameObject[] _spawnableObjects, _abilityUI;
+    private List<GameObject>  _activeIllusions = new List<GameObject>();
 
 
-    //[Tooltip("Gameobject that will spawn on click")]
-    //private GameObject _selectedObject;
+    [Tooltip("Gameobject that will spawn on click")]
+    private GameObject _selectedObject;
+
+    private GameObject _spawnedVisual;
 
     private bool[] _canSpawn;
 
     [SerializeField] private float[] _abilityStartTimers;
-     private float[]  _abilityTimers;
+    private float[] _abilityTimers;
 
-    private int _totalActiveIllusions = 0;
+    [SerializeField] private GameObject _visualPrefab;
+
+    private int _index = 0;
 
 
-    //Visual aid prefab: transparent sprite, change color to red if you can't place it
-    //
 
 
     private void Start()
     {
+        _abilityTimers = new float[_abilityStartTimers.Length];
+        _canSpawn = new bool[_spawnableObjects.Length];
+
         for (int i = 0; i < _abilityTimers.Length; i++)
         {
             _abilityTimers[i] = _abilityStartTimers[i];
@@ -35,16 +41,9 @@ public class AbilityManager : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < _abilityUI.Length; i++)
+        for (int i = 0; i < _spawnableObjects.Length; i++)
         {
-            if (Input.GetKeyDown((i + 1).ToString()))
-            {
-                SpawnObject(i);
-                break;
-            }
-
-
-            if(_abilityTimers[i] > 0)
+            if (_abilityTimers[i] > 0)
             {
                 _abilityTimers[i] -= Time.deltaTime;
             }
@@ -52,15 +51,63 @@ public class AbilityManager : MonoBehaviour
             {
                 _canSpawn[i] = true;
             }
+
+
+            if (Input.GetKeyDown((i + 1).ToString()))
+            {
+                _index = i;
+                SpawnVisual();
+                //break;
+            }
+        }
+
+
+        //Left click   -  Visual is spawned  -  Visual Can place
+        if (Input.GetMouseButtonDown(0) && _spawnedVisual != null && _spawnedVisual.GetComponent<AbilityVisual>().CanPlace)
+        {
+            SpawnObject();
         }
     }
 
 
-    private void SpawnObject(int index)
+    private void SpawnVisual()
     {
-        if (!_canSpawn[index])
-            return;
+        if (!_canSpawn[_index]) { return;}
 
-        GameObject selectedObject = _spawnableObjects[index];
+        _selectedObject = _spawnableObjects[_index];
+
+        //Spawn Visual
+        _spawnedVisual = Instantiate(_visualPrefab, (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+        //Set Sprite
+        _spawnedVisual.GetComponent<SpriteRenderer>().sprite = _selectedObject.GetComponent<SpriteRenderer>().sprite;
+
+        _canSpawn[_index] = false;
+
+    }
+
+    private void CancelVisual()
+    {
+        Destroy(_spawnedVisual);
+    }
+
+
+    private void SpawnObject()
+    {
+        Destroy(_spawnedVisual);
+
+        Vector3 pos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        GameObject spawnedObject = Instantiate(_selectedObject, pos, Quaternion.identity);
+
+        _activeIllusions.Add(spawnedObject);
+
+
+        if(_activeIllusions.Count > 4)
+        {
+            Destroy(_activeIllusions[0]);
+            _activeIllusions.RemoveAt(0);
+        }
+
+        _abilityTimers[_index] = _abilityStartTimers[_index];
     }
 }

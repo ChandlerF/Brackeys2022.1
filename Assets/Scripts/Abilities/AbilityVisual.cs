@@ -8,7 +8,7 @@ public class AbilityVisual : MonoBehaviour
     [SerializeField] private Color _canPlace, _cannotPlace;
 
     private SpriteRenderer sr;
-    private LayerMask _collideWithMask;
+    [SerializeField] private LayerMask _collideWithMask;
 
     void Start()
     {
@@ -26,13 +26,20 @@ public class AbilityVisual : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if((_collideWithMask.value & 1 << col.gameObject.layer) != 0)
+        if (((1 << col.gameObject.layer) & _collideWithMask) != 0)
         {
             sr.color = _cannotPlace;
+            CanPlace = false;
         }
-        else
+    }
+
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (((1 << col.gameObject.layer) & _collideWithMask) != 0)
         {
             sr.color = _canPlace;
+            CanPlace = true;
         }
     }
 }

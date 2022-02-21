@@ -43,7 +43,7 @@ public class AbilityManager : MonoBehaviour
     {
         for (int i = 0; i < _spawnableObjects.Length; i++)
         {
-            if (_abilityTimers[i] > 0)
+            if (_abilityTimers[i] > 0 && !_canSpawn[i])
             {
                 _abilityTimers[i] -= Time.deltaTime;
             }
@@ -67,12 +67,16 @@ public class AbilityManager : MonoBehaviour
         {
             SpawnObject();
         }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            CancelVisual();
+        }
     }
 
 
     private void SpawnVisual()
     {
-        if (!_canSpawn[_index]) { return;}
+        if (!_canSpawn[_index] || _spawnedVisual != null) {return; }
 
         _selectedObject = _spawnableObjects[_index];
 
@@ -88,6 +92,9 @@ public class AbilityManager : MonoBehaviour
     private void CancelVisual()
     {
         Destroy(_spawnedVisual);
+
+
+        _abilityTimers[_index] = _abilityStartTimers[_index];
     }
 
 
@@ -108,6 +115,7 @@ public class AbilityManager : MonoBehaviour
             _activeIllusions.RemoveAt(0);
         }
 
+        _canSpawn[_index] = false;
         _abilityTimers[_index] = _abilityStartTimers[_index];
     }
 }

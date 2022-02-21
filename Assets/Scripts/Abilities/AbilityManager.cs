@@ -84,7 +84,7 @@ public class AbilityManager : MonoBehaviour
         _spawnedVisual = Instantiate(_visualPrefab, (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
         //Set Sprite
         _spawnedVisual.GetComponent<SpriteRenderer>().sprite = _selectedObject.GetComponent<SpriteRenderer>().sprite;
-
+        //Set Visual scale / box collider scale! Try it with a wall
         _canSpawn[_index] = false;
 
     }

@@ -84,8 +84,10 @@ public class AbilityManager : MonoBehaviour
         _spawnedVisual = Instantiate(_visualPrefab, (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
         //Set Sprite
         _spawnedVisual.GetComponent<SpriteRenderer>().sprite = _selectedObject.GetComponent<SpriteRenderer>().sprite;
-        //Set scale of visual to object
+        //Set scale of object onto visual
         _spawnedVisual.transform.localScale = _selectedObject.transform.lossyScale;
+        //Collider size of object onto visual
+        _spawnedVisual.GetComponent<BoxCollider2D>().size = _selectedObject.GetComponent<BoxCollider2D>().size;
 
         _canSpawn[_index] = false;
 

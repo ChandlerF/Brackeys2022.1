@@ -50,9 +50,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnableObjects:
   - {fileID: 980244942905568913, guid: 785296f9050a85a46ad78195e5e08e5c, type: 3}
+  - {fileID: 980244942905568913, guid: d8e4d7c78d1d21945af0ca4db7e2f1ad, type: 3}
   _abilityUI: []
   _abilityStartTimers:
-  - 3
+  - 2
+  - 5
   _visualPrefab: {fileID: 1018926201892406196, guid: 5c41c5344f730444cb8fb21d795927e4, type: 3}
 --- !u!1 &1140168919448216586
 GameObject:

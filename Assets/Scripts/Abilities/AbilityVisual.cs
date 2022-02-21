@@ -21,6 +21,10 @@ public class AbilityVisual : MonoBehaviour
     {
         Vector3 pos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
+
+
+
+        //Rotate based off of scroll wheel?
     }
 
 

@@ -12,8 +12,8 @@ public class FieldOfView : MonoBehaviour
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 
-	[HideInInspector]
-	public List<Transform> visibleTargets = new List<Transform>();
+	//[HideInInspector]
+	//public List<Transform> visibleTargets = new List<Transform>();
 
 	public float meshResolution;
 	public int edgeResolveIterations;
@@ -39,7 +39,7 @@ public class FieldOfView : MonoBehaviour
 		while (true)
 		{
 			yield return new WaitForSeconds(delay);
-			FindVisibleTargets();
+			//FindVisibleTargets();
 		}
 	}
 
@@ -48,10 +48,10 @@ public class FieldOfView : MonoBehaviour
 		DrawFieldOfView();
 	}
 
-	void FindVisibleTargets()
+	/*void FindVisibleTargets()
 	{
 		visibleTargets.Clear();
-		Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+		Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetMask);
 
 		for (int i = 0; i < targetsInViewRadius.Length; i++)
 		{
@@ -66,7 +66,7 @@ public class FieldOfView : MonoBehaviour
 				}
 			}
 		}
-	}
+	}*/
 
 	void DrawFieldOfView()
 	{
@@ -109,7 +109,7 @@ public class FieldOfView : MonoBehaviour
 		vertices[0] = Vector3.zero;
 		for (int i = 0; i < vertexCount - 1; i++)
 		{
-			vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]) + Vector3.forward * maskCutawayDst;
+			vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]) + Vector3.up * maskCutawayDst;
 
 			if (i < vertexCount - 2)
 			{
@@ -159,9 +159,9 @@ public class FieldOfView : MonoBehaviour
 	ViewCastInfo ViewCast(float globalAngle)
 	{
 		Vector3 dir = DirFromAngle(globalAngle, true);
-		RaycastHit hit;
+		RaycastHit2D hit;
 
-		if (Physics.Raycast(transform.position, dir, out hit, viewRadius, obstacleMask))
+		if (hit = Physics2D.Raycast(transform.position, dir, viewRadius, obstacleMask))
 		{
 			return new ViewCastInfo(true, hit.point, hit.distance, globalAngle);
 		}
@@ -177,7 +177,7 @@ public class FieldOfView : MonoBehaviour
 		{
 			angleInDegrees += transform.eulerAngles.y;
 		}
-		return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+		return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad), 0);
 	}
 
 	public struct ViewCastInfo

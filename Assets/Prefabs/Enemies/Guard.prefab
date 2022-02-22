@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 7485369076386763535}
   - component: {fileID: 1349987857781339271}
   - component: {fileID: 1056394975}
+  - component: {fileID: 8170583769337889998}
   m_Layer: 7
   m_Name: Guard
   m_TagString: Enemy
@@ -218,3 +219,24 @@ MonoBehaviour:
   edgeDstThreshold: 0.5
   maskCutawayDst: 0.1
   viewMeshFilter: {fileID: 543285454}
+--- !u!50 &8170583769337889998
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980244942905568913}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4
+  m_LinearDrag: 6
+  m_AngularDrag: 1
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4

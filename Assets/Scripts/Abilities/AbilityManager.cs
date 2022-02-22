@@ -8,7 +8,6 @@ public class AbilityManager : MonoBehaviour
     [SerializeField] private GameObject[] _spawnableObjects, _abilityUI;
     private List<GameObject>  _activeIllusions = new List<GameObject>();
 
-
     [Tooltip("Gameobject that will spawn on click")]
     private GameObject _selectedObject;
 
@@ -82,15 +81,10 @@ public class AbilityManager : MonoBehaviour
 
         //Spawn Visual
         _spawnedVisual = Instantiate(_visualPrefab, (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
-        //Set Sprite
-        _spawnedVisual.GetComponent<SpriteRenderer>().sprite = _selectedObject.GetComponent<SpriteRenderer>().sprite;
-        //Set scale of object onto visual
-        _spawnedVisual.transform.localScale = _selectedObject.transform.lossyScale;
-        //Collider size of object onto visual
-        _spawnedVisual.GetComponent<BoxCollider2D>().size = _selectedObject.GetComponent<BoxCollider2D>().size;
+        
+        _spawnedVisual.GetComponent<AbilityVisual>().SetVisual(_selectedObject);
 
         _canSpawn[_index] = false;
-
     }
 
     private void CancelVisual()
@@ -104,11 +98,13 @@ public class AbilityManager : MonoBehaviour
 
     private void SpawnObject()
     {
+        _selectedObject = _spawnedVisual.GetComponent<AbilityVisual>().SelectedObject;
+
         Destroy(_spawnedVisual);
 
         Vector3 pos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        GameObject spawnedObject = Instantiate(_selectedObject, pos, Quaternion.identity);
+        GameObject spawnedObject = Instantiate(_selectedObject, pos, _selectedObject.transform.rotation);
 
         _activeIllusions.Add(spawnedObject);
 

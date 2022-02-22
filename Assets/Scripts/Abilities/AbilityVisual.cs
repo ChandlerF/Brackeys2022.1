@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AbilityVisual : MonoBehaviour
 {
-    public bool CanPlace = true;
+    public GameObject SelectedObject;
+    public bool CanPlace = true, CanRotate = false;
     [SerializeField] private Color _canPlace, _cannotPlace;
 
     private SpriteRenderer sr;
     [SerializeField] private LayerMask _collideWithMask;
+    [SerializeField] private GameObject _wall, _verticalWall;
 
     void Start()
     {
@@ -23,10 +25,45 @@ public class AbilityVisual : MonoBehaviour
         transform.position = pos;
 
 
-
-        //Rotate based off of scroll wheel?
+        if (CanRotate)
+        {
+            Rotate();
+        }
     }
 
+    public void SetVisual(GameObject selectedObject)
+    {
+        SelectedObject = selectedObject;
+
+        //Set Sprite
+        GetComponent<SpriteRenderer>().sprite = SelectedObject.GetComponent<SpriteRenderer>().sprite;
+        //Set scale of object onto visual
+        transform.localScale = SelectedObject.transform.lossyScale;
+        //Collider size of object onto visual
+        GetComponent<BoxCollider2D>().size = SelectedObject.GetComponent<BoxCollider2D>().size;
+        //Set rotation from object onto visual
+        transform.rotation = Quaternion.Euler(0, 0, SelectedObject.transform.rotation.eulerAngles.z);
+
+        if (SelectedObject == _wall)
+        {
+            CanRotate = true;
+        }
+    }
+
+    private void Rotate()
+    {
+        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0f)
+        {
+            if(SelectedObject == _wall)
+            {
+                SetVisual(_verticalWall);
+            }
+            else if(SelectedObject == _verticalWall)
+            {
+                SetVisual(_wall);
+            }
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D col)
     {

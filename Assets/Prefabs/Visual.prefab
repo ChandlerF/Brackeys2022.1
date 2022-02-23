@@ -53,7 +53,7 @@ MonoBehaviour:
   _cannotPlace: {r: 0.8867924, g: 0.38065147, b: 0.38065147, a: 1}
   _collideWithMask:
     serializedVersion: 2
-    m_Bits: 1472
+    m_Bits: 1216
   _wall: {fileID: 3316897637301391627, guid: f38444b67d661d843891ff2c9b66a137, type: 3}
   _verticalWall: {fileID: 110025447809016201, guid: b178a5fc28c6c454690caee04c2518b6, type: 3}
 --- !u!212 &1018926201892406197

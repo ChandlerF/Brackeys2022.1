@@ -7,25 +7,41 @@ public class Guard : MonoBehaviour
 {
     private NavMeshAgent _agent;
     [SerializeField] private Transform _target;
-    [SerializeField] private float _rotationSpeed = 5f, _raycastDistance = 5f;
+    [SerializeField] private float _rotationSpeed = 5f, _raycastDistance = 5f, _distanceToPoint = 1f;
     [SerializeField] private LayerMask _targetLayers;
+    [SerializeField] private PathsParent _pathsParent;
+    [SerializeField] private GameObject _visualisation;
+
+
     void Start()
     {
+
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateUpAxis = false;
         _agent.updateRotation = false;
 
-        if(_target == null) { _target = GameObject.FindGameObjectWithTag("Player").transform; }
+        if(_pathsParent == null) { _target = GameObject.FindGameObjectWithTag("Player").transform; Debug.LogError("No Paths Assigned"); }
+
+
+        _target = _pathsParent.GetPath();
+        _agent.SetDestination(_target.position);
     }
 
 
     void Update()
     {
-        _agent.SetDestination(_target.position);
         RotateTowards();
+
+
+        Vector3 distance = _target.position - transform.position;
+        if (distance.sqrMagnitude < _distanceToPoint)
+        {
+            _target = _pathsParent.GetPath();
+            _agent.SetDestination(_target.position);
+        }
     }
 
-
+    
 
     private void RotateTowards()
     {
@@ -42,9 +58,20 @@ public class Guard : MonoBehaviour
         }
 
 
-        Vector3 vectorToTarget = target - transform.position;
+        Vector3 vectorToTarget = target - _visualisation.transform.position;
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90f;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * _rotationSpeed);
+        _visualisation.transform.rotation = Quaternion.Slerp(_visualisation.transform.rotation, q, Time.deltaTime * _rotationSpeed);
+    }
+
+    private void ChasePlayer()
+    {
+        InvokeRepeating("SetToPlayerPos", 0f, 0.3f);
+        Debug.Log("ChasingPlayer");
+    }
+
+    private void SetToPlayerPos()
+    {
+        _agent.SetDestination(_target.position);
     }
 }

@@ -15,10 +15,13 @@ public class PlayerMovement : MonoBehaviour
 
     public float MoveSpeed;
 
+    private bool _facingRight = true;
+    private Animator _anim;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -39,6 +42,16 @@ public class PlayerMovement : MonoBehaviour
                 _horizontal *= _moveLimiter;
                 _vertical *= _moveLimiter;
             }
+            
+            if (_horizontal != 0 || _vertical != 0)
+            {
+                FlipPlayer();
+                _anim.SetBool("HorizontalMovement", true);
+            }
+            else
+            {
+                _anim.SetBool("HorizontalMovement", false);
+            }
 
             Vector2 newVel = new Vector2(_horizontal * MoveSpeed, _vertical * MoveSpeed);
 
@@ -49,6 +62,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void FlipPlayer()
+    {
+        if (_horizontal < 0 && _facingRight || _horizontal > 0 && !_facingRight)
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            _facingRight = !_facingRight;
+            Debug.Log("Flip");
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {

@@ -68,15 +68,19 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Rotate(new Vector3(0, 180, 0));
             _facingRight = !_facingRight;
-            Debug.Log("Flip");
         }
+    }
+
+    private void Die()
+    {
+        //Reload scene and spawn at checkpoint?
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.transform.CompareTag("Enemy"))
         {
-            Debug.Log("Player Touched an Enemy");
+            Die();
         }
     }
 }

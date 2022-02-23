@@ -24,8 +24,12 @@ public class FieldOfView : MonoBehaviour
 	public MeshFilter viewMeshFilter;
 	Mesh viewMesh;
 
+	private Enemy _enemy;
+
 	void Start()
 	{
+		_enemy = transform.GetComponentInParent<Enemy>();
+
 		viewMesh = new Mesh();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
@@ -61,9 +65,11 @@ public class FieldOfView : MonoBehaviour
 			if (Vector3.Angle(transform.up, dirToTarget) < viewAngle / 2)
 			{
 				float dstToTarget = Vector3.Distance(transform.position, target.position);
-				if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+				if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
 				{
 					visibleTargets.Add(target);
+
+					_enemy.SetTarget(target);
 				}
 			}
 		}

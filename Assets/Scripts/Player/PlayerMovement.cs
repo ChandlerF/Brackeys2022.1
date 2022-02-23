@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
     private void Die()
     {
         //Reload scene and spawn at checkpoint?
+        Debug.Log("Touching enemy");
     }
 
     private void OnCollisionEnter2D(Collision2D col)

@@ -7,10 +7,11 @@ public class Guard : Enemy
 {
     private NavMeshAgent _agent;
     [SerializeField] private Transform _target;
-    [SerializeField] private float _rotationSpeed = 5f, _raycastDistance = 5f, _distanceToPoint = 1f;
+    [SerializeField] private float _rotationSpeed = 5f, _raycastDistance = 5f, _distanceToPoint = 1f, _chaseSpeed = 6f;
     [SerializeField] private PathsParent _pathsParent;
     [SerializeField] private GameObject _visualisation;
     [SerializeField] private LayerMask _targetLayers, _obstacleMask;
+    private bool IsChasingPlayer = false;
 
 
     void Start()
@@ -40,7 +41,7 @@ public class Guard : Enemy
 
 
         Vector3 distance = _target.position - transform.position;
-        if (distance.sqrMagnitude < _distanceToPoint)
+        if (!IsChasingPlayer && distance.sqrMagnitude < _distanceToPoint)
         {
             _target = _pathsParent.GetPath();
             _agent.SetDestination(_target.position);
@@ -87,15 +88,19 @@ public class Guard : Enemy
 
     private void ChasePlayer()
     {
-        if (!IsInvoking("ActivelyChase"))
+        if (!IsChasingPlayer)
         {
-            InvokeRepeating("ActivelyChase", 0f, 0.3f);
+            InvokeRepeating("ActivelyChase", 0f, 0.1f);
+            _visualisation.SetActive(false);
+            _agent.speed = _chaseSpeed;
             Debug.Log("ChasingPlayer");
+            IsChasingPlayer = true;
         }
     }
 
     private void ActivelyChase()
     {
+        //Should check if I can path there, but, it doesn't work for some reason..?
         _agent.SetDestination(_target.position);
     }
 }

@@ -136,14 +136,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980244942905568913}
-  m_LocalRotation: {x: 0, y: 0, z: 0.01745245, w: 0.99984777}
-  m_LocalPosition: {x: 1.9772326, y: 2.3915937, z: -0.7331833}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 543285456}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7485369076386763535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: -2026587383
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 56d5ef117aa93f64c82882df6cd53874, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba22163f5c191e34497246c9eca718d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -208,18 +208,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0018544495, y: -0.018670797}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7083333, y: 1.2083334}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.61, y: 0.96}
   m_EdgeRadius: 0
 --- !u!114 &108493747648403955
 MonoBehaviour:
@@ -234,14 +234,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
-  _rotationSpeed: 3
+  _rotationSpeed: 1
   _raycastDistance: 10
   _distanceToPoint: 0.5
+  _chaseSpeed: 10
+  _pathsParent: {fileID: 0}
+  _visualisation: {fileID: 543285453}
   _targetLayers:
     serializedVersion: 2
     m_Bits: 1344
-  _pathsParent: {fileID: 0}
-  _visualisation: {fileID: 543285453}
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!50 &8170583769337889998
 Rigidbody2D:
   serializedVersion: 4
@@ -272,16 +276,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 980244942905568913}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.68
+  m_Radius: 0.44
   m_Speed: 2.5
-  m_Acceleration: 8
+  m_Acceleration: 14
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 1.21
+  m_Height: 1.26
   m_BaseOffset: 0.6
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

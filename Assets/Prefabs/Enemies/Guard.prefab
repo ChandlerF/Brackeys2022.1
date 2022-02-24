@@ -236,7 +236,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _rotationSpeed: 1
   _raycastDistance: 10
-  _distanceToPoint: 0.5
+  _distanceToPoint: 1
   _chaseSpeed: 10
   _pathsParent: {fileID: 0}
   _visualisation: {fileID: 543285453}

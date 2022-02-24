@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19b5191515806246b29b10ef1605326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 4.5
-  viewAngle: 65
+  viewRadius: 6
+  viewAngle: 30
   targetMask:
     serializedVersion: 2
     m_Bits: 64
@@ -209,10 +209,10 @@ MonoBehaviour:
   _shootPoint: {fileID: 3066420898275430812}
   _target: {fileID: 0}
   _visualisation: {fileID: 8812769741687660367}
-  _shootForce: 10
+  _shootForce: 27
   _startShootTimer: 2
-  _rotateOne: 0
-  _rotateTwo: 360
+  _rotateOne: 180
+  _rotateTwo: 300
   _rotateSpeed: 20
 --- !u!1 &8229567303645563779
 GameObject:

@@ -11,6 +11,7 @@ public class AbilityVisual : MonoBehaviour
     private SpriteRenderer sr;
     [SerializeField] private LayerMask _collideWithMask;
     [SerializeField] private GameObject _wall, _verticalWall;
+    private bool _isTouching = true;
 
     void Start()
     {
@@ -71,6 +72,7 @@ public class AbilityVisual : MonoBehaviour
         {
             sr.color = _cannotPlace;
             CanPlace = false;
+            _isTouching = true;
         }
     }
 
@@ -80,6 +82,16 @@ public class AbilityVisual : MonoBehaviour
         if (((1 << col.gameObject.layer) & _collideWithMask) != 0)
         {
             sr.color = _canPlace;
+            _isTouching = false;
+            Invoke("CheckForColllisions", 0.2f);
+        }
+    }
+
+
+    private void CheckForColllisions()
+    {
+        if (!_isTouching)
+        {
             CanPlace = true;
         }
     }

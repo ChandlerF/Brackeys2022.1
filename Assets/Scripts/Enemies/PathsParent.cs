@@ -7,7 +7,7 @@ public class PathsParent : MonoBehaviour
     public List<Transform> PathPoints = new List<Transform>();
     private Transform _cachedPoint;
 
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < transform.childCount; i++)
         {

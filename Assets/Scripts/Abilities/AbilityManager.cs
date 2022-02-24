@@ -53,7 +53,8 @@ public class AbilityManager : MonoBehaviour
 
                 //1 is full      0 means ability is ready
                 float amountPerSecond = current / _abilityStartTimers[i];
-                _abilityFill[i].fillAmount = amountPerSecond * Time.deltaTime;
+
+                _abilityFill[i].fillAmount = amountPerSecond;
             }
             else
             {

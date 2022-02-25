@@ -50,6 +50,7 @@ public class AbilityVisual : MonoBehaviour
         if (SelectedObject == _wall)
         {
             CanRotate = true;
+            _collideWithMask = _collideWithMask ^ (1 << LayerMask.NameToLayer("Environment"));
         }
     }
 

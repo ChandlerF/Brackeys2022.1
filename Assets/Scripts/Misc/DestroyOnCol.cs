@@ -11,11 +11,15 @@ public class DestroyOnCol : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, _deathTimer);
+        if (_useDeathTimer)
+        {
+            Destroy(gameObject, _deathTimer);
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionStay2D(Collision2D col)
     {
+        Debug.Log("Col");
         if ((_layers.value & 1<<col.gameObject.layer) != 0)
         {
             if (!_killParent)
@@ -28,4 +32,19 @@ public class DestroyOnCol : MonoBehaviour
             }
         }
     }
+/*
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if ((_layers.value & 1 << col.gameObject.layer) != 0)
+        {
+            if (!_killParent)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(transform.parent.gameObject);
+            }
+        }
+    }*/
 }

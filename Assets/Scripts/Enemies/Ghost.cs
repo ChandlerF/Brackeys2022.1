@@ -31,6 +31,11 @@ public class Ghost : Enemy
 
     void Update()
     {
+        if(_target == null)
+        {
+            NewTargetWhenNull();
+        }
+
         RotateTowards();
 
         transform.position = Vector2.MoveTowards(transform.position, (Vector2)_target.position, _speed * Time.deltaTime);
@@ -67,10 +72,18 @@ public class Ghost : Enemy
     {
         if (!IsChasingPlayer)
         {
-            _visualisation.SetActive(false);
+            //_visualisation.SetActive(false);
             _speed = _chaseSpeed;
             Debug.Log("ChasingPlayer");
             IsChasingPlayer = true;
         }
+    }
+
+    private void NewTargetWhenNull()
+    {
+        IsChasingPlayer = false;
+        _visualisation.SetActive(true);
+        _target = _pathsParent.GetPath();
+        _speed = _patrolSpeed;
     }
 }

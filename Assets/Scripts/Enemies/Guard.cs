@@ -12,6 +12,7 @@ public class Guard : Enemy
     [SerializeField] private GameObject _visualisation;
     [SerializeField] private LayerMask _targetLayers, _obstacleMask;
     private bool IsChasingPlayer = false;
+    private float _patrolSpeed;
 
 
     void Start()
@@ -20,8 +21,9 @@ public class Guard : Enemy
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateUpAxis = false;
         _agent.updateRotation = false;
+        _patrolSpeed = _agent.speed;
 
-        if(_pathsParent == null) 
+        if (_pathsParent == null) 
         { 
             _target = GameObject.FindGameObjectWithTag("Player").transform;
             Debug.LogError("No Paths Assigned");
@@ -37,6 +39,11 @@ public class Guard : Enemy
 
     void Update()
     {
+        if(_target == null)
+        {
+            NewTargetWhenNull();
+        }
+
         RotateTowards();
 
 
@@ -91,7 +98,7 @@ public class Guard : Enemy
         if (!IsChasingPlayer)
         {
             InvokeRepeating("ActivelyChase", 0f, 0.1f);
-            _visualisation.SetActive(false);
+            //_visualisation.SetActive(false);
             _agent.speed = _chaseSpeed;
             Debug.Log("ChasingPlayer");
             IsChasingPlayer = true;
@@ -102,5 +109,14 @@ public class Guard : Enemy
     {
         //Should check if I can path there, but, it doesn't work for some reason..?
         _agent.SetDestination(_target.position);
+    }
+
+    private void NewTargetWhenNull()
+    {
+        IsChasingPlayer = false;
+        _visualisation.SetActive(true);
+        _target = _pathsParent.GetPath();
+        _agent.SetDestination(_target.position);
+        _agent.speed = _patrolSpeed;
     }
 }

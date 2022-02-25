@@ -11,7 +11,6 @@ public class AbilityVisual : MonoBehaviour
     private SpriteRenderer sr;
     [SerializeField] private LayerMask _collideWithMask;
     [SerializeField] private GameObject _wall, _verticalWall;
-    private bool _isTouching = true;
     private Collider2D _collider;
 
     void Start()
@@ -75,7 +74,6 @@ public class AbilityVisual : MonoBehaviour
         {
             sr.color = _cannotPlace;
             CanPlace = false;
-            _isTouching = true;
         }
     }
 
@@ -88,7 +86,6 @@ public class AbilityVisual : MonoBehaviour
             !_collider.IsTouchingLayers(_collideWithMask))
         {
             sr.color = _canPlace;
-            _isTouching = false;
 
             CanPlace = true;
         }

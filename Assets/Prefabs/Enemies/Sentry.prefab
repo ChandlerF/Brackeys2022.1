@@ -211,7 +211,7 @@ MonoBehaviour:
   _shootPoint: {fileID: 3066420898275430812}
   _target: {fileID: 0}
   _visualisation: {fileID: 8812769741687660367}
-  _shootForce: 27
+  _shootForce: 33
   _startShootTimer: 2
   _rotateOne: 180
   _rotateTwo: 300

@@ -74,7 +74,7 @@ public class Sentry : Enemy
         {
             _target = target;
 
-            _visualisation.GetComponent<MeshRenderer>().enabled = false;
+            _visualMesh.enabled = false;
         }
     }
 }

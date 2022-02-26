@@ -7,10 +7,20 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
     [SerializeField] private Menu[] _menus;
+    [SerializeField] private bool _playSongOnStart;
+    [SerializeField] private string _songName;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        if (_playSongOnStart)
+        {
+            AudioManager.instance.Play(_songName);
+        }
     }
 
     public void OpenMenu(string menuName)

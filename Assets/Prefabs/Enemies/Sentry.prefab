@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 6
-  viewAngle: 30
+  viewAngle: 50
   targetMask:
     serializedVersion: 2
     m_Bits: 64
@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 5471018152946721746}
   - component: {fileID: 3538723504275905230}
   - component: {fileID: 6905987036925426178}
+  - component: {fileID: 2601004802366741404}
   m_Layer: 7
   m_Name: Sentry
   m_TagString: Enemy
@@ -136,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 5261197839944939381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.38, y: 0.41, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 8812769741687660367}
   - {fileID: 3066420898275430812}
@@ -183,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: -2026587383
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 611c9a964ae53ec47bcffc732a25a440, type: 3}
+  m_Sprite: {fileID: 7532579839741202566, guid: 1e3f2e387cd5ba04ab2f00b2794645c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -230,17 +231,36 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.009296402, y: 0.004576981}
   m_SpriteTilingProperty:
-    border: {x: 0.34375, y: 0.15625, z: 0.375, w: 0.1875}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.40625, y: 0.9375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24966332, y: 0.61553526}
+  m_Size: {x: 0.3, y: 0.9}
   m_EdgeRadius: 0
+--- !u!95 &2601004802366741404
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5261197839944939381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f8a54bfbfcc64344b041ba0228d023e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8229567303645563779
 GameObject:
   m_ObjectHideFlags: 0

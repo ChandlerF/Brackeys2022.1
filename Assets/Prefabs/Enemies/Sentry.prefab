@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 191123008642233765}
   - component: {fileID: 5471018152946721746}
   - component: {fileID: 3538723504275905230}
+  - component: {fileID: 6905987036925426178}
   m_Layer: 7
   m_Name: Sentry
   m_TagString: Enemy
@@ -214,6 +215,32 @@ MonoBehaviour:
   _rotateOne: 180
   _rotateTwo: 300
   _rotateSpeed: 20
+--- !u!61 &6905987036925426178
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5261197839944939381}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009296402, y: 0.004576981}
+  m_SpriteTilingProperty:
+    border: {x: 0.34375, y: 0.15625, z: 0.375, w: 0.1875}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.24966332, y: 0.61553526}
+  m_EdgeRadius: 0
 --- !u!1 &8229567303645563779
 GameObject:
   m_ObjectHideFlags: 0

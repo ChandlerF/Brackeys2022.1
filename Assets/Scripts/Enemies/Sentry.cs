@@ -10,20 +10,16 @@ public class Sentry : Enemy
     private float _shootTimer;
     [SerializeField] private int _rotateOne = 0, _rotateTwo = 360, _rotateSpeed = 20;
     private bool _canFlipRotation = false;
+    private MeshRenderer _visualMesh;
 
     private void Start()
     {
+        _visualMesh = _visualisation.GetComponent<MeshRenderer>();
         _visualisation.Rotate(0, 0, _rotateOne);
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(2))
-        {
-            _target = GameObject.FindGameObjectWithTag("Player").transform;
-            Shoot();
-        }
-
         if(_shootTimer > 0)
         {
             _shootTimer -= Time.deltaTime;
@@ -32,6 +28,10 @@ public class Sentry : Enemy
         if(_target != null)
         {
             Shoot();
+        }
+        else
+        {
+            _visualMesh.enabled = true;
         }
 
 
@@ -74,7 +74,7 @@ public class Sentry : Enemy
         {
             _target = target;
 
-            _visualisation.gameObject.SetActive(false);
+            _visualisation.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

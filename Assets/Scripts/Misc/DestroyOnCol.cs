@@ -19,7 +19,6 @@ public class DestroyOnCol : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D col)
     {
-        Debug.Log("Col");
         if ((_layers.value & 1<<col.gameObject.layer) != 0)
         {
             if (!_killParent)

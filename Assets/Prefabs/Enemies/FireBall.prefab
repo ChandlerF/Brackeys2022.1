@@ -146,4 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layers:
     serializedVersion: 2
-    m_Bits: 1344
+    m_Bits: 1472
+  _useDeathTimer: 1
+  _killParent: 0
+  _deathTimer: 3

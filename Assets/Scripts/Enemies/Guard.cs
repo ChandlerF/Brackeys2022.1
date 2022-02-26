@@ -98,7 +98,7 @@ public class Guard : Enemy
         if (!IsChasingPlayer)
         {
             InvokeRepeating("ActivelyChase", 0f, 0.1f);
-            //_visualisation.SetActive(false);
+            _visualisation.GetComponent<MeshRenderer>().enabled = false;
             _agent.speed = _chaseSpeed;
             Debug.Log("ChasingPlayer");
             IsChasingPlayer = true;
@@ -114,7 +114,7 @@ public class Guard : Enemy
     private void NewTargetWhenNull()
     {
         IsChasingPlayer = false;
-        _visualisation.SetActive(true);
+        _visualisation.GetComponent<MeshRenderer>().enabled = true;
         _target = _pathsParent.GetPath();
         _agent.SetDestination(_target.position);
         _agent.speed = _patrolSpeed;

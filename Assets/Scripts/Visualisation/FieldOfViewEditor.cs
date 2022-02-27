@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
-[CustomEditor(typeof(FieldOfView))]
+/*[CustomEditor(typeof(FieldOfView))]
 public class FieldOfViewEditor : Editor
 {
 
@@ -24,4 +24,4 @@ public class FieldOfViewEditor : Editor
 		}
 	}
 
-}
+}*/

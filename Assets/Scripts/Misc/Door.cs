@@ -16,6 +16,8 @@ public class Door : MonoBehaviour
             if(_nextSceneNumber == 5)
             {
                 AudioManager.instance.Play("CompletedGame");
+                col.transform.GetComponent<PlayerMovement>().Pause();
+                return;
             }
 
             SceneManager.LoadScene(_nextSceneNumber);

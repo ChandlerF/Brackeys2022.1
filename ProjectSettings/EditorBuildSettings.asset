@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/Menu.unity
     guid: 57d580ff5aefa1a40a11271b206e5c96
   - enabled: 1
-    path: Assets/Scenes/Final/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Test/ChandlerTest.unity
+    guid: 7ec433354a4b3db4daf75b37614bbfbf
   m_configObjects: {}

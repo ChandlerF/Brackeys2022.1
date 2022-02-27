@@ -86,6 +86,8 @@ public class PlayerMovement : MonoBehaviour
         //Reload scene and spawn at checkpoint?
         Debug.Log("Touching enemy");
         _gameOverScreen.SetActive(true);
+        AudioManager.instance.StopAll();
+        AudioManager.instance.Play("PlayerDeath");
         Time.timeScale = 0f;
     }
 

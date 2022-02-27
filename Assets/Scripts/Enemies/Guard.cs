@@ -14,7 +14,6 @@ public class Guard : Enemy
     private bool IsChasingPlayer = false;
     private float _patrolSpeed;
 
-
     void Start()
     {
 
@@ -98,6 +97,7 @@ public class Guard : Enemy
             }
         }
     }
+    
 
     private void ChasePlayer()
     {

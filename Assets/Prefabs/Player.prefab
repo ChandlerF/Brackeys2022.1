@@ -463,8 +463,8 @@ MonoBehaviour:
   - {fileID: 4665878228317645498}
   - {fileID: 3705442006018628615}
   _abilityStartTimers:
-  - 6
   - 8
+  - 10
   - 15
   _visualPrefab: {fileID: 1018926201892406196, guid: 5c41c5344f730444cb8fb21d795927e4, type: 3}
 --- !u!1 &1140168919448216586

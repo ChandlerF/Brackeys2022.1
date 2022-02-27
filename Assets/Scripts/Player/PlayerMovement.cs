@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private bool _facingRight = true;
     private Animator _anim;
 
+    [SerializeField] private GameObject _gameOverScreen;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -29,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
         // Gives a value between -1 and 1
         _horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         _vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     void FixedUpdate()
@@ -75,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //Reload scene and spawn at checkpoint?
         Debug.Log("Touching enemy");
+        _gameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     private void OnCollisionEnter2D(Collision2D col)

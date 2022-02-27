@@ -128,7 +128,7 @@ MonoBehaviour:
   _distanceToPoint: 0.5
   _rotationSpeed: 1.5
   _patrolSpeed: 2
-  _chaseSpeed: 6
+  _chaseSpeed: 4.5
   _pathsParent: {fileID: 0}
   _visualisation: {fileID: 4783090283037222213}
 --- !u!50 &-4822747482076127542

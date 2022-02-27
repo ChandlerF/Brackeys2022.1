@@ -79317,7 +79317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2046968385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79330,16 +79330,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ba79313e5bb194b83c6b9d29bf8f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dontDestroy: 0
   sounds:
-  - name: TitleScreen
-    clip: {fileID: 8300000, guid: 24327a2182532ac4db5f75133fb05a46, type: 3}
-    volume: 0.4
-    pitch: 1
-    source: {fileID: 0}
   - name: FinalLevel
     clip: {fileID: 8300000, guid: b9a3835b78c688a4c93dafe4cd673cab, type: 3}
     volume: 0.4
     pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &2046968386
 Transform:

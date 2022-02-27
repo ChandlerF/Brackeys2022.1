@@ -81,6 +81,12 @@ public class Guard : Enemy
     {
         if(target != _target)
         {
+            if(target == null)
+            {
+                _target = target;
+                return;
+            }
+
             NavMeshPath path = new NavMeshPath();
             _agent.CalculatePath(_target.position, path);
 

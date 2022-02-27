@@ -14,6 +14,11 @@ public class Smoke : MonoBehaviour
             col.gameObject.layer = 12;
             //col.GetComponent<PlayerMovement>().DieOnCol = false;
         }
+        else if (col.CompareTag("Enemy"))
+        {
+            col.GetComponent<Enemy>().SetTarget(null);
+            Debug.Log("Set nullll");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
@@ -26,7 +31,8 @@ public class Smoke : MonoBehaviour
 
     public void FixPlayer()
     {
-        _cachedPlayer.layer = 6;
+        if(_cachedPlayer != null)
+            _cachedPlayer.layer = 6;
         //_cachedPlayer.GetComponent<PlayerMovement>().DieOnCol = true;
     }
 

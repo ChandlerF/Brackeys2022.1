@@ -49,8 +49,8 @@ MonoBehaviour:
   SelectedObject: {fileID: 0}
   CanPlace: 1
   CanRotate: 0
-  _canPlace: {r: 0.34270033, g: 0.8867924, b: 0.27189392, a: 1}
-  _cannotPlace: {r: 0.8867924, g: 0.38065147, b: 0.38065147, a: 1}
+  _canPlace: {r: 0.34270033, g: 0.8867924, b: 0.27189392, a: 0.5882353}
+  _cannotPlace: {r: 0.8867924, g: 0.38065147, b: 0.38065147, a: 0.5882353}
   _collideWithMask:
     serializedVersion: 2
     m_Bits: 1472

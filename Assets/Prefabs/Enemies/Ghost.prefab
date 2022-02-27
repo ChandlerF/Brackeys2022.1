@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1349987857781339271}
   - component: {fileID: -6576604833114957069}
   - component: {fileID: -4822747482076127542}
+  - component: {fileID: 27437742330442589}
   m_Layer: 11
   m_Name: Ghost
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 980244942905568913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 445445595472305915}
   m_Father: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -2026587383
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4710f6a23009e334cb7dacfd686d8255, type: 3}
+  m_Sprite: {fileID: 4618636914245026219, guid: bf80f55a7efec794f98b6c34b374ee21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0698331}
+  m_Offset: {x: 0, y: -0.08019945}
   m_SpriteTilingProperty:
-    border: {x: 0.28125, y: 0.09375, z: 0.28125, w: 0.0625}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.46875, y: 0.625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37571535, y: 0.6722911}
+  m_Size: {x: 0.794403, y: 0.36349672}
   m_EdgeRadius: 0
 --- !u!114 &-6576604833114957069
 MonoBehaviour:
@@ -128,7 +129,7 @@ MonoBehaviour:
   _distanceToPoint: 0.5
   _rotationSpeed: 1.5
   _patrolSpeed: 2
-  _chaseSpeed: 4.5
+  _chaseSpeed: 4.8
   _pathsParent: {fileID: 0}
   _visualisation: {fileID: 4783090283037222213}
 --- !u!50 &-4822747482076127542
@@ -152,6 +153,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &27437742330442589
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980244942905568913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8f3a69728f61c04aa1918d092bd8ec1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4783090283037222213
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        //Escape should pause
     }
 
     void FixedUpdate()

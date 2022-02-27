@@ -7,8 +7,16 @@ public class MainThemeSound : MonoBehaviour
     [SerializeField] private bool _playMainTheme = true;
     void Start()
     {
-        AudioManager.instance.Play("LevelIntro");
-        Invoke("StartMainTheme", AudioManager.instance.SoundTime("LevelIntro"));
+        if (_playMainTheme)
+        {
+            AudioManager.instance.StopAll();
+            AudioManager.instance.Play("LevelIntro");
+            Invoke("StartMainTheme", AudioManager.instance.SoundTime("LevelIntro"));
+        }
+        else
+        {
+            StartMainTheme();
+        }
     }
 
 

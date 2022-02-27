@@ -141,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1;
+        AudioManager.instance.StopAll();
         AudioManager.instance.Play("ButtonClick");
         SceneManager.LoadScene(0);
     }

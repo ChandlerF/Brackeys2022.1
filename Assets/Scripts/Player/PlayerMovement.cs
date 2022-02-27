@@ -124,12 +124,14 @@ public class PlayerMovement : MonoBehaviour
         {
             _pauseMenu.SetActive(true);
             AudioManager.instance.PauseAll();
+            AudioManager.instance.Play("ButtonClick");
             AudioManager.instance.Play("PauseMenu");
             Time.timeScale = 0;
         }
         else
         {
             Time.timeScale = 1;
+            AudioManager.instance.Play("ButtonClick");
             AudioManager.instance.Stop("PauseMenu");
             AudioManager.instance.UnPauseAll();
             _pauseMenu.SetActive(false);
@@ -139,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1;
+        AudioManager.instance.Play("ButtonClick");
         SceneManager.LoadScene(0);
     }
 

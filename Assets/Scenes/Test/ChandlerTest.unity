@@ -79645,6 +79645,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 79e75e3fdf5ba7540bd2365c0c405c06, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &2046968386
 Transform:
   m_ObjectHideFlags: 0

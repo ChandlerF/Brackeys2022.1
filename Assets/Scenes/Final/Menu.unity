@@ -2156,9 +2156,15 @@ MonoBehaviour:
   sounds:
   - name: TitleScreen
     clip: {fileID: 8300000, guid: e1b570f8f44546048bb8374cbdca9e51, type: 3}
-    volume: 0.4
+    volume: 0.2
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 79e75e3fdf5ba7540bd2365c0c405c06, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1657617342
 Transform:

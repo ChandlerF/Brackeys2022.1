@@ -30,6 +30,8 @@ public class MenuManager : MonoBehaviour
             if (_menus[i].MenuName.Equals(menuName))
             {
                 _menus[i].Open();
+
+                AudioManager.instance.Play("ButtonClick");
             }
 
             else if (_menus[i].IsOpen)
@@ -58,12 +60,14 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        AudioManager.instance.Play("ButtonClick");
         SceneManager.LoadScene(1);
     }
 
 
     public void QuitGame()
     {
+        AudioManager.instance.Play("ButtonClick");
         Application.Quit();
     }
 }

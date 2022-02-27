@@ -79562,7 +79562,7 @@ MonoBehaviour:
   _dontDestroy: 0
   sounds:
   - name: FinalLevel
-    clip: {fileID: 8300000, guid: b9a3835b78c688a4c93dafe4cd673cab, type: 3}
+    clip: {fileID: 8300000, guid: 89c86c68a2cac6b46880306caef7766c, type: 3}
     volume: 0.25
     pitch: 1
     loop: 0
@@ -79590,6 +79590,12 @@ MonoBehaviour:
     volume: 0.25
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: PauseMenu
+    clip: {fileID: 8300000, guid: c8a8f32954142374c9f2daa7b324bb65, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
 --- !u!4 &2046968386
 Transform:

@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _facingRight = true;
     private Animator _anim;
 
-    [SerializeField] private GameObject _gameOverScreen;
+    [SerializeField] private GameObject _gameOverScreen, _pauseMenu;
 
     void Start()
     {
@@ -38,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        //Escape should pause
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
     }
 
     void FixedUpdate()
@@ -97,5 +100,30 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
+    }
+
+
+    public void Pause()
+    {
+        if(Time.timeScale == 1)
+        {
+            _pauseMenu.SetActive(true);
+            AudioManager.instance.PauseAll();
+            AudioManager.instance.Play("PauseMenu");
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            AudioManager.instance.Stop("PauseMenu");
+            AudioManager.instance.UnPauseAll();
+            _pauseMenu.SetActive(false);
+        }
+    }
+
+    public void LoadMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }

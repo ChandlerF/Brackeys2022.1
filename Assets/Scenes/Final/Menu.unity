@@ -2155,7 +2155,7 @@ MonoBehaviour:
   _dontDestroy: 0
   sounds:
   - name: TitleScreen
-    clip: {fileID: 8300000, guid: 24327a2182532ac4db5f75133fb05a46, type: 3}
+    clip: {fileID: 8300000, guid: e1b570f8f44546048bb8374cbdca9e51, type: 3}
     volume: 0.4
     pitch: 1
     loop: 1

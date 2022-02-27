@@ -333,9 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnableObjects:
-  - {fileID: 980244942905568913, guid: 785296f9050a85a46ad78195e5e08e5c, type: 3}
   - {fileID: 2722963931601744309, guid: 5bf26e4745dd91b4d92578daa724515c, type: 3}
   - {fileID: 3316897637301391627, guid: f38444b67d661d843891ff2c9b66a137, type: 3}
+  - {fileID: 7305043133206966349, guid: c4e16857aa8a21548aa079b6f5b5f407, type: 3}
   _abilityUI:
   - {fileID: 4644531734172351553}
   - {fileID: 2249206029274700701}
@@ -345,9 +345,9 @@ MonoBehaviour:
   - {fileID: 4665878228317645498}
   - {fileID: 3705442006018628615}
   _abilityStartTimers:
-  - 2
-  - 5
-  - 3
+  - 6
+  - 8
+  - 15
   _visualPrefab: {fileID: 1018926201892406196, guid: 5c41c5344f730444cb8fb21d795927e4, type: 3}
 --- !u!1 &1140168919448216586
 GameObject:
@@ -800,8 +800,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b4d8bc919a2d8874a882062213886005, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e2f17b5ecf4cc4e4b93ddd688bba027d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1336,8 +1336,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba22163f5c191e34497246c9eca718d9, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: b4d8bc919a2d8874a882062213886005, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1582,6 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanMove: 1
+  DieOnCol: 1
   MoveSpeed: 120
   _gameOverScreen: {fileID: 3810165434722800351}
 --- !u!50 &6464355255637381868
@@ -2117,7 +2118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4459723881856570345, guid: 0f72d1ac5b076bf4b88226d35d080194, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b51ebd271a5d8b499360c20d959e9b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

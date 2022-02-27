@@ -10,7 +10,7 @@ public class AbilityVisual : MonoBehaviour
 
     private SpriteRenderer sr;
     [SerializeField] private LayerMask _collideWithMask;
-    [SerializeField] private GameObject _wall, _verticalWall;
+    [SerializeField] private GameObject _wall, _verticalWall, _smoke;
     private Collider2D _collider;
 
     void Start()
@@ -42,7 +42,8 @@ public class AbilityVisual : MonoBehaviour
         //Set scale of object onto visual
         transform.localScale = SelectedObject.transform.lossyScale;
         //Collider size of object onto visual
-        GetComponent<BoxCollider2D>().size = SelectedObject.GetComponent<BoxCollider2D>().size;
+        if(SelectedObject.GetComponent<BoxCollider2D>() != null)
+            GetComponent<BoxCollider2D>().size = SelectedObject.GetComponent<BoxCollider2D>().size;
         //Set rotation from object onto visual
         transform.rotation = Quaternion.Euler(0, 0, SelectedObject.transform.rotation.eulerAngles.z);
 
@@ -50,6 +51,10 @@ public class AbilityVisual : MonoBehaviour
         {
             CanRotate = true;
             _collideWithMask = _collideWithMask ^ (1 << LayerMask.NameToLayer("Environment"));
+        }
+        else if (SelectedObject == _smoke)
+        {
+            _collideWithMask = 0;
         }
     }
 

@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 84e8a08beccc46f48b91daa5dbc7ce48
+guid: 49926997b72b1b049bf66c9f757a6af5
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6530545002054319655
-    second: Guard2Idle_0
-  - first:
-      213: -8449934741265982492
-    second: Guard2Idle_1
-  - first:
-      213: 4541795860151296679
-    second: Guard2Idle_2
-  - first:
-      213: -5610685972299086554
-    second: Guard2Idle_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -125,91 +113,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Guard2Idle_0
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 4
-        width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72e762d341821aa50800000000000000
-      internalID: 6530545002054319655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guard2Idle_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 4
-        width: 19
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ebdb9b5f1dcbba80800000000000000
-      internalID: -8449934741265982492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guard2Idle_2
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 4
-        width: 19
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a268a67543b70f30800000000000000
-      internalID: 4541795860151296679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guard2Idle_3
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 4
-        width: 19
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62588dab5d6d222b0800000000000000
-      internalID: -5610685972299086554
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

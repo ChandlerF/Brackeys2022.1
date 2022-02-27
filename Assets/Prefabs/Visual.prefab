@@ -56,6 +56,7 @@ MonoBehaviour:
     m_Bits: 1472
   _wall: {fileID: 3316897637301391627, guid: f38444b67d661d843891ff2c9b66a137, type: 3}
   _verticalWall: {fileID: 110025447809016201, guid: b178a5fc28c6c454690caee04c2518b6, type: 3}
+  _smoke: {fileID: 7305043133206966349, guid: c4e16857aa8a21548aa079b6f5b5f407, type: 3}
 --- !u!212 &1018926201892406197
 SpriteRenderer:
   m_ObjectHideFlags: 0

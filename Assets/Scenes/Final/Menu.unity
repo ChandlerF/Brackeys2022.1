@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nez
+  m_text: inezwandita
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8b0612868f3c4d408fc16d224d3eb00, type: 2}
   m_sharedMaterial: {fileID: 4816760630956995054, guid: b8b0612868f3c4d408fc16d224d3eb00, type: 2}
@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CH51
+  m_text: Cyro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8b0612868f3c4d408fc16d224d3eb00, type: 2}
   m_sharedMaterial: {fileID: 4816760630956995054, guid: b8b0612868f3c4d408fc16d224d3eb00, type: 2}

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool CanMove = true;
+    public bool CanMove = true, DieOnCol = true;
 
     private Rigidbody2D _rb;
 
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.transform.CompareTag("Enemy"))
+        if (DieOnCol && col.transform.CompareTag("Enemy"))
         {
             Die();
         }

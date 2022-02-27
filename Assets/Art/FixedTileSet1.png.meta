@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 84e8a08beccc46f48b91daa5dbc7ce48
+guid: aa6f3c294b2e70646b2778fba1410696
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6530545002054319655
-    second: Guard2Idle_0
+      213: -4769925290943311519
+    second: FixedTileSet1_14
   - first:
-      213: -8449934741265982492
-    second: Guard2Idle_1
+      213: -5102032737461474164
+    second: FixedTileSet1_21
   - first:
-      213: 4541795860151296679
-    second: Guard2Idle_2
+      213: -1092486688035719381
+    second: FixedTileSet1_23
   - first:
-      213: -5610685972299086554
-    second: Guard2Idle_3
+      213: 5065028814496351644
+    second: FixedTileSet1_30
+  - first:
+      213: -4743763081896769709
+    second: FixedTileSet1_5
+  - first:
+      213: -1969711512771420554
+    second: FixedTileSet1_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,85 +133,151 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Guard2Idle_0
+      name: FixedTileSet1_14
       rect:
         serializedVersion: 2
-        x: 3
-        y: 4
-        width: 19
-        height: 28
+        x: 210
+        y: 95
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: -7}
+        - {x: -16, y: 16}
+        - {x: -8, y: 16}
+        - {x: -8, y: -7}
       tessellationDetail: 0
       bones: []
-      spriteID: 72e762d341821aa50800000000000000
-      internalID: 6530545002054319655
+      spriteID: 1611c245832ddcdb0800000000000000
+      internalID: -4769925290943311519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard2Idle_1
+      name: FixedTileSet1_21
       rect:
         serializedVersion: 2
-        x: 24
-        y: 4
-        width: 19
-        height: 27
+        x: 177
+        y: 62
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: -16}
+        - {x: -16, y: 16}
+        - {x: -8, y: 16}
+        - {x: -8, y: -16}
       tessellationDetail: 0
       bones: []
-      spriteID: 4ebdb9b5f1dcbba80800000000000000
-      internalID: -8449934741265982492
+      spriteID: c8ce13bc140f139b0800000000000000
+      internalID: -5102032737461474164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard2Idle_2
+      name: FixedTileSet1_23
       rect:
         serializedVersion: 2
-        x: 45
-        y: 4
-        width: 19
-        height: 26
+        x: 210
+        y: 62
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 8, y: -16}
+        - {x: 8, y: 16}
+        - {x: 16, y: 16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
-      spriteID: 7a268a67543b70f30800000000000000
-      internalID: 4541795860151296679
+      spriteID: b27b9cd3525b6d0f0800000000000000
+      internalID: -1092486688035719381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard2Idle_3
+      name: FixedTileSet1_30
       rect:
         serializedVersion: 2
-        x: 66
-        y: 4
-        width: 19
-        height: 27
+        x: 210
+        y: 29
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: -16}
+        - {x: -16, y: 16}
+        - {x: -8, y: 16}
+        - {x: -8, y: -16}
       tessellationDetail: 0
       bones: []
-      spriteID: 62588dab5d6d222b0800000000000000
-      internalID: -5610685972299086554
+      spriteID: c954c210fd89a4640800000000000000
+      internalID: 5065028814496351644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedTileSet1_5
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 95
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 8, y: -7}
+        - {x: 8, y: 16}
+        - {x: 16, y: 16}
+        - {x: 16, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3574eec4c94ca2eb0800000000000000
+      internalID: -4743763081896769709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedTileSet1_6
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 29
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 8, y: -16}
+        - {x: 8, y: 16}
+        - {x: 16, y: 16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e134ba0dd2aa4e0800000000000000
+      internalID: -1969711512771420554
       vertices: []
       indices: 
       edges: []

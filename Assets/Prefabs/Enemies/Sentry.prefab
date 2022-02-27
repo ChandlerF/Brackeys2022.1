@@ -98,7 +98,7 @@ MonoBehaviour:
   viewAngle: 50
   targetMask:
     serializedVersion: 2
-    m_Bits: 4160
+    m_Bits: 20544
   obstacleMask:
     serializedVersion: 2
     m_Bits: 1280

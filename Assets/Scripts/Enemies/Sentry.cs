@@ -51,6 +51,7 @@ public class Sentry : Enemy
             spawnedFireBall.GetComponent<Rigidbody2D>().AddForce(spawnedFireBall.transform.up * _shootForce, ForceMode2D.Impulse);
 
             _shootTimer = _startShootTimer;
+            AudioManager.instance.Play("ShootFireball");
         }
     }
 

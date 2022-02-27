@@ -454,6 +454,10 @@ MonoBehaviour:
   - {fileID: 4644531734172351553}
   - {fileID: 2249206029274700701}
   - {fileID: 8748653480108362500}
+  _spawnedSoundsName:
+  - IllusionDecoy
+  - IllusionWall
+  - IllusionSmokeBomb
   _abilityFill:
   - {fileID: 3775640244919396602}
   - {fileID: 4665878228317645498}
@@ -1968,6 +1972,7 @@ MonoBehaviour:
   MoveSpeed: 120
   _gameOverScreen: {fileID: 3810165434722800351}
   _pauseMenu: {fileID: 508407459533976013}
+  _startWalkSoundTimer: 0.5
 --- !u!50 &6464355255637381868
 Rigidbody2D:
   serializedVersion: 4

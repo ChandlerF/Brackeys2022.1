@@ -21,8 +21,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private GameObject _gameOverScreen, _pauseMenu;
 
+    [SerializeField] private float _startWalkSoundTimer = 0.2f;
+     private float _walkSoundTimer;
+
     void Start()
     {
+        _walkSoundTimer = _startWalkSoundTimer;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
     }
@@ -41,6 +45,17 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
+        }
+
+
+        if(_horizontal != 0 && _walkSoundTimer > 0 || _vertical != 0 && _walkSoundTimer > 0)
+        {
+            _walkSoundTimer -= Time.deltaTime;
+        }
+        else if(_walkSoundTimer <= 0)
+        {
+            WalkSound();
+            _walkSoundTimer = _startWalkSoundTimer;
         }
     }
 
@@ -125,5 +140,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+
+    private void WalkSound()
+    {
+        int x = Random.Range(0, 3);
+
+        AudioManager.instance.Play("PlayerWalk" + (x + 1).ToString());
     }
 }

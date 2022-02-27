@@ -7,6 +7,7 @@ public class AbilityManager : MonoBehaviour
 {
     //UI = Buttons for player to press, calls the SpawnVisual() func
     [SerializeField] private GameObject[] _spawnableObjects, _abilityUI;
+    [SerializeField] private string[] _spawnedSoundsName;
     [SerializeField] private Image[] _abilityFill;
     private List<GameObject>  _activeIllusions = new List<GameObject>();
 
@@ -111,6 +112,8 @@ public class AbilityManager : MonoBehaviour
         _selectedObject = _spawnedVisual.GetComponent<AbilityVisual>().SelectedObject;
 
         Destroy(_spawnedVisual);
+
+        AudioManager.instance.Play(_spawnedSoundsName[_index]);
 
         Vector3 pos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

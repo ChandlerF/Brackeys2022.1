@@ -5,8 +5,9 @@ using UnityEngine;
 public class DestroyOnCol : MonoBehaviour
 {
     [SerializeField] private LayerMask _layers;
-    [SerializeField] private bool _useDeathTimer = true, _killParent = false;
+    [SerializeField] private bool _useDeathTimer = true, _killParent = false, _useAudio = false;
     [SerializeField] private float _deathTimer = 3f;
+    [SerializeField] private string _audioName;
 
 
     private void Start()
@@ -21,6 +22,11 @@ public class DestroyOnCol : MonoBehaviour
     {
         if ((_layers.value & 1<<col.gameObject.layer) != 0)
         {
+            if (_useAudio)
+            {
+                AudioManager.instance.Play(_audioName);
+            }
+
             if (!_killParent)
             {
                 Destroy(gameObject);

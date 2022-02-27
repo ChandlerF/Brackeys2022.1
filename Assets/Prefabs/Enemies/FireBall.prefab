@@ -219,7 +219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layers:
     serializedVersion: 2
-    m_Bits: 5568
+    m_Bits: 21952
   _useDeathTimer: 1
   _killParent: 0
+  _useAudio: 1
   _deathTimer: 3
+  _audioName: FireballHit

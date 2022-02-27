@@ -129,7 +129,9 @@ MonoBehaviour:
     m_Bits: 2176
   _useDeathTimer: 0
   _killParent: 0
+  _useAudio: 0
   _deathTimer: 1
+  _audioName: 
 --- !u!50 &2963071463704626345
 Rigidbody2D:
   serializedVersion: 4
@@ -163,9 +165,9 @@ GameObject:
   - component: {fileID: 1674570188044747840}
   - component: {fileID: 8172938312045795515}
   - component: {fileID: 4167294474462533413}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: Collider
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -3812,6 +3812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc24b00d7a5e4f4ab6207980d69ae12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playMainTheme: 1
 --- !u!1 &988738491
 GameObject:
   m_ObjectHideFlags: 0
@@ -79453,7 +79454,7 @@ MonoBehaviour:
   sounds:
   - name: FinalLevel
     clip: {fileID: 8300000, guid: b9a3835b78c688a4c93dafe4cd673cab, type: 3}
-    volume: 0.4
+    volume: 0.25
     pitch: 1
     loop: 0
     source: {fileID: 0}

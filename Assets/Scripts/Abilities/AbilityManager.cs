@@ -116,10 +116,19 @@ public class AbilityManager : MonoBehaviour
 
         GameObject spawnedObject = Instantiate(_selectedObject, pos, _selectedObject.transform.rotation);
 
-        _activeIllusions.Add(spawnedObject);
 
+        for (int i = _activeIllusions.Count - 1; i >= 0; i--)
+        {
+            if (_activeIllusions[i] == null)
+            {
+                _activeIllusions.RemoveAt(i);
+            }
+        }
 
-        if(_activeIllusions.Count > 3)
+            _activeIllusions.Add(spawnedObject);
+        //_activeIllusions.Insert(0, spawnedObject);
+
+        if (_activeIllusions.Count > 3)
         {
             Destroy(_activeIllusions[0]);
             _activeIllusions.RemoveAt(0);

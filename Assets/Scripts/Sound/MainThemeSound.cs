@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainThemeSound : MonoBehaviour
 {
+    [SerializeField] private bool _playMainTheme = true;
     void Start()
     {
         AudioManager.instance.Play("LevelIntro");
@@ -13,6 +14,13 @@ public class MainThemeSound : MonoBehaviour
 
     private void StartMainTheme()
     {
-        AudioManager.instance.Play("MainTheme");
+        if (_playMainTheme)
+        {
+            AudioManager.instance.Play("MainTheme");
+        }
+        else
+        {
+            AudioManager.instance.Play("FinalLevel");
+        }
     }
 }

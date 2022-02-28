@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3889624030280343260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3889624030280343262}
+  - component: {fileID: 3889624030280343261}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3889624030280343262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889624030280343260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3889624030280343261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889624030280343260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ba79313e5bb194b83c6b9d29bf8f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dontDestroy: 1
+  sounds:
+  - name: FinalLevel
+    clip: {fileID: 8300000, guid: 89c86c68a2cac6b46880306caef7766c, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: b11022e3b29624042b885d11d91303c1, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: c7d536d6a323e644293dc9d7d232fc95, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: b80f0ddc5f38d3e4993fb0f11ca30985, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LevelIntro
+    clip: {fileID: 8300000, guid: 11e1d0b89b654d346aecd1b1766e36ac, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PauseMenu
+    clip: {fileID: 8300000, guid: c8a8f32954142374c9f2daa7b324bb65, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ShootFireball
+    clip: {fileID: 8300000, guid: 8a3da08e3c23d1e4989e0a00f495efb8, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FireballHit
+    clip: {fileID: 8300000, guid: 628c23d4a6f7433419c71d35d22c365e, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: IllusionSmokeBomb
+    clip: {fileID: 8300000, guid: 2e9f6b2615640a748819afbea3d5bcf2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: IllusionWall
+    clip: {fileID: 8300000, guid: 232c6aec54a2bec498060af823a6751d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: IllusionDecoy
+    clip: {fileID: 8300000, guid: 0eac7b3bae7cf4e46aed8cf3b9b62a7d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerWalk1
+    clip: {fileID: 8300000, guid: 0da6ca56712347345aff4d36ab87adb5, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerWalk2
+    clip: {fileID: 8300000, guid: 0d41de2cc2b221e4b80af1eed41632d2, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerWalk3
+    clip: {fileID: 8300000, guid: 01fb6d695c2a4314e8a5601d8920b2e7, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 79e75e3fdf5ba7540bd2365c0c405c06, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CompletedGame
+    clip: {fileID: 8300000, guid: b80f0ddc5f38d3e4993fb0f11ca30985, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: NextLevel
+    clip: {fileID: 8300000, guid: 8716cba62676e4b428af604389a3bad3, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TitleScreen
+    clip: {fileID: 8300000, guid: e1b570f8f44546048bb8374cbdca9e51, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layers:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 10368
   _useDeathTimer: 0
   _killParent: 0
   _useAudio: 0

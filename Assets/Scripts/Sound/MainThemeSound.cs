@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class MainThemeSound : MonoBehaviour
 {
-    [SerializeField] private bool _playMainTheme = true;
+    [SerializeField] private bool _playMainTheme = true, _playLevelIntro = false;
     void Start()
     {
+        AudioManager.instance.StopAllExcept("NextLevel");
         if (_playMainTheme)
         {
-            AudioManager.instance.StopAll();
-            AudioManager.instance.Play("LevelIntro");
-            Invoke("StartMainTheme", AudioManager.instance.SoundTime("LevelIntro"));
+            if (_playLevelIntro)
+            {
+                AudioManager.instance.Play("LevelIntro");
+                Invoke("StartMainTheme", AudioManager.instance.SoundTime("LevelIntro"));
+            }
+            else
+            {
+                StartMainTheme();
+            }
         }
         else
         {

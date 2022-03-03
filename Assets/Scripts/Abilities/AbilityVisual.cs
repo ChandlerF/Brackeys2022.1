@@ -5,7 +5,7 @@ using UnityEngine;
 public class AbilityVisual : MonoBehaviour
 {
     public GameObject SelectedObject;
-    public bool CanPlace = true, CanRotate = false;
+    public bool CanPlace = false, CanRotate = false;
     [SerializeField] private Color _canPlace, _cannotPlace;
 
     private SpriteRenderer sr;
@@ -17,7 +17,8 @@ public class AbilityVisual : MonoBehaviour
     {
         _collider = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
-        sr.color = _canPlace;
+        sr.color = _cannotPlace;
+        Invoke("CheckForCol", 0.05f);
     }
 
 
@@ -31,6 +32,22 @@ public class AbilityVisual : MonoBehaviour
         {
             Rotate();
         }
+        /*
+        if (_collider.IsTouchingLayers(_collideWithMask))
+        {
+            CanPlace = false;
+            sr.color = _cannotPlace;
+        }
+        else
+        {
+            CanPlace = true;
+            sr.color = _canPlace;
+        }*/
+        /*if (!_collider.IsTouchingLayers(_collideWithMask))
+        {
+            CanPlace = true;
+            sr.color = _canPlace;
+        }*/
     }
 
     public void SetVisual(GameObject selectedObject)
@@ -72,7 +89,8 @@ public class AbilityVisual : MonoBehaviour
             }
         }
     }
-
+    
+    
     private void OnTriggerStay2D(Collider2D col)
     {
         if (((1 << col.gameObject.layer) & _collideWithMask) != 0)
@@ -82,13 +100,16 @@ public class AbilityVisual : MonoBehaviour
         }
     }
 
-
+    
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (
-            ((1 << col.gameObject.layer) & _collideWithMask) != 0
-            &&
-            !_collider.IsTouchingLayers(_collideWithMask))
+        CheckForCol();
+    }
+
+
+    private void CheckForCol()
+    {
+        if (!_collider.IsTouchingLayers(_collideWithMask))
         {
             sr.color = _canPlace;
 
@@ -96,3 +117,10 @@ public class AbilityVisual : MonoBehaviour
         }
     }
 }
+
+
+
+/*if (
+            ((1 << col.gameObject.layer) & _collideWithMask) != 0
+            &&
+            !_collider.IsTouchingLayers(_collideWithMask))*/

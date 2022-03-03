@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2722963931601744308}
   - component: {fileID: -3157837737580410998}
   - component: {fileID: 2963071463704626345}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: PlayerImitation
   m_TagString: Untagged
   m_Icon: {fileID: 0}

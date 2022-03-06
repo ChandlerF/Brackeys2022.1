@@ -94,6 +94,7 @@ public class Guard : Enemy
             {
                 _target = target;
                 ChasePlayer();
+                Debug.Log(path.status);
             }
         }
     }

@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
-  _rotationSpeed: 1
+  _rotationSpeed: 0.8
   _raycastDistance: 10
   _distanceToPoint: 1
   _chaseSpeed: 7

@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private int _nextSceneNumber;
+    private int _nextSceneNumber;
+
+    private void Start()
+    {
+        _nextSceneNumber = SceneManager.GetActiveScene().buildIndex + 1;
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -13,12 +18,12 @@ public class Door : MonoBehaviour
         {
             AudioManager.instance.Play("NextLevel");
 
-            if(_nextSceneNumber == 5)
+            /*if(_nextSceneNumber == 5)
             {
                 AudioManager.instance.Play("CompletedGame");
                 col.transform.GetComponent<PlayerMovement>().Pause();
                 return;
-            }
+            }*/
 
             SceneManager.LoadScene(_nextSceneNumber);
         }

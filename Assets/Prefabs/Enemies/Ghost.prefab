@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _distanceToPoint: 0.5
-  _rotationSpeed: 1.5
+  _rotationSpeed: 1
   _patrolSpeed: 2
   _chaseSpeed: 4.8
   _pathsParent: {fileID: 0}
